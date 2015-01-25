@@ -8,7 +8,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Servlicle</name>
-  <description>Serves static files in a servlet container</description>
+  <description>Provide a Java Servlet which will respond with a file in a decent way.</description>
   <url>https://github.com/KolonelKustard/servlicle</url>
 
   <modules>
@@ -43,13 +43,14 @@
 
   <licenses>
     <license>
-      <name>Apache License Version 2.0</name>
+      <name>The Apache License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0</url>
     </license>
   </licenses>
 
   <scm>
     <connection>scm:git:https://github.com/KolonelKustard/servlicle.git</connection>
+    <developerConnection>scm:git:https://github.com/KolonelKustard/servlicle.git</developerConnection>
     <url>https://github.com/KolonelKustard/servlicle</url>
   </scm>
 
