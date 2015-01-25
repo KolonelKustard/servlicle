@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.totalchange.servlicle</groupId>
+  <artifactId>servlicle-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Servlicle</name>
+  <description>Serves static files in a servlet container</description>
+  <url>https://github.com/KolonelKustard/servlicle</url>
+
+  <modules>
+    <module>tomcat8</module>
+    <module>servlicle</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <issueManagement>
+    <system>Github</system>
+    <url>https://github.com/KolonelKustard/servlicle/issues</url>
+  </issueManagement>
+
+  <developers>
+    <developer>
+      <id>kolonel</id>
+      <name>Ralph Jones</name>
+      <email>ralph@totalchange.com</email>
+      <organization>TotalChange</organization>
+      <organizationUrl>http://www.totalchange.com</organizationUrl>
+      <roles>
+        <role>Project Admin</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>0</timezone>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>Apache License Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/KolonelKustard/servlicle.git</connection>
+    <url>https://github.com/KolonelKustard/servlicle</url>
+  </scm>
+
+  <organization>
+    <name>TotalChange</name>
+    <url>http://www.totalchange.com/</url>
+  </organization>
+</project>

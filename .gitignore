@@ -1,0 +1,12 @@
+/.settings
+/.project
+
+/tomcat8/target
+/tomcat8/.settings
+/tomcat8/.classpath
+/tomcat8/.project
+
+/servlicle/target
+/servlicle/.settings
+/servlicle/.classpath
+/servlicle/.project
