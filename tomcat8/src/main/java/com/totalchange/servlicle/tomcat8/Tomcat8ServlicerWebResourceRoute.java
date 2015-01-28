@@ -38,225 +38,186 @@ class Tomcat8ServlicerWebResourceRoute implements WebResourceRoot {
         this.wrapped = wrapped;
     }
 
-    public void addLifecycleListener(LifecycleListener listener) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public LifecycleListener[] findLifecycleListeners() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    public void removeLifecycleListener(LifecycleListener listener) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public void init() throws LifecycleException {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public void start() throws LifecycleException {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public void stop() throws LifecycleException {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public void destroy() throws LifecycleException {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public LifecycleState getState() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    public String getStateName() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
+    /**
+     * This is the beast that overrides the original wrapped getResource to
+     * allow access to files outside the webapp root.
+     */
     public WebResource getResource(String path) {
         return new FileResource(wrapped, path, new File(path), true);
     }
 
+    public void addLifecycleListener(LifecycleListener listener) {
+        wrapped.addLifecycleListener(listener);
+    }
+
+    public LifecycleListener[] findLifecycleListeners() {
+        return wrapped.findLifecycleListeners();
+    }
+
+    public void removeLifecycleListener(LifecycleListener listener) {
+        wrapped.removeLifecycleListener(listener);
+    }
+
+    public void init() throws LifecycleException {
+        wrapped.init();
+    }
+
+    public void start() throws LifecycleException {
+        wrapped.start();
+    }
+
+    public void stop() throws LifecycleException {
+        wrapped.stop();
+    }
+
+    public void destroy() throws LifecycleException {
+        wrapped.destroy();
+    }
+
+    public LifecycleState getState() {
+        return wrapped.getState();
+    }
+
+    public String getStateName() {
+        return wrapped.getStateName();
+    }
+
     public WebResource[] getResources(String path) {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getResources(path);
     }
 
     public WebResource getClassLoaderResource(String path) {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getClassLoaderResource(path);
     }
 
     public WebResource[] getClassLoaderResources(String path) {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getClassLoaderResources(path);
     }
 
     public String[] list(String path) {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.list(path);
     }
 
     public Set<String> listWebAppPaths(String path) {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.listWebAppPaths(path);
     }
 
     public WebResource[] listResources(String path) {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.listResources(path);
     }
 
     public boolean mkdir(String path) {
-        // TODO Auto-generated method stub
-        return false;
+        return wrapped.mkdir(path);
     }
 
     public boolean write(String path, InputStream is, boolean overwrite) {
-        // TODO Auto-generated method stub
-        return false;
+        return wrapped.write(path, is, overwrite);
     }
 
     public void createWebResourceSet(ResourceSetType type, String webAppMount,
             URL url, String internalPath) {
-        // TODO Auto-generated method stub
-        
+        wrapped.createWebResourceSet(type, webAppMount, url, internalPath);
     }
 
     public void createWebResourceSet(ResourceSetType type, String webAppMount,
             String base, String archivePath, String internalPath) {
-        // TODO Auto-generated method stub
-        
+        wrapped.createWebResourceSet(type, webAppMount, base, archivePath,
+                internalPath);
     }
 
     public void addPreResources(WebResourceSet webResourceSet) {
-        // TODO Auto-generated method stub
-        
+        wrapped.addPostResources(webResourceSet);
     }
 
     public WebResourceSet[] getPreResources() {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getPreResources();
     }
 
     public void addJarResources(WebResourceSet webResourceSet) {
-        // TODO Auto-generated method stub
-        
+        wrapped.addJarResources(webResourceSet);
     }
 
     public WebResourceSet[] getJarResources() {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getJarResources();
     }
 
     public void addPostResources(WebResourceSet webResourceSet) {
-        // TODO Auto-generated method stub
-        
+        wrapped.addPostResources(webResourceSet);
     }
 
     public WebResourceSet[] getPostResources() {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getPostResources();
     }
 
     public Context getContext() {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getContext();
     }
 
     public void setContext(Context context) {
-        // TODO Auto-generated method stub
-        
+        wrapped.setContext(context);
     }
 
     public void setAllowLinking(boolean allowLinking) {
-        // TODO Auto-generated method stub
-        
+        wrapped.setAllowLinking(allowLinking);
     }
 
     public boolean getAllowLinking() {
-        // TODO Auto-generated method stub
-        return false;
+        return wrapped.getAllowLinking();
     }
 
     public void setCachingAllowed(boolean cachingAllowed) {
-        // TODO Auto-generated method stub
-        
+        wrapped.setCachingAllowed(cachingAllowed);
     }
 
     public boolean isCachingAllowed() {
-        // TODO Auto-generated method stub
-        return false;
+        return wrapped.isCachingAllowed();
     }
 
     public void setCacheTtl(long ttl) {
-        // TODO Auto-generated method stub
-        
+        wrapped.setCacheTtl(ttl);
     }
 
     public long getCacheTtl() {
-        // TODO Auto-generated method stub
-        return 0;
+        return wrapped.getCacheTtl();
     }
 
     public void setCacheMaxSize(long cacheMaxSize) {
-        // TODO Auto-generated method stub
-        
+        wrapped.setCacheMaxSize(cacheMaxSize);
     }
 
     public long getCacheMaxSize() {
-        // TODO Auto-generated method stub
-        return 0;
+        return wrapped.getCacheMaxSize();
     }
 
     public void setCacheObjectMaxSize(int cacheObjectMaxSize) {
-        // TODO Auto-generated method stub
-        
+        wrapped.setCacheObjectMaxSize(cacheObjectMaxSize);
     }
 
     public int getCacheObjectMaxSize() {
-        // TODO Auto-generated method stub
-        return 0;
+        return wrapped.getCacheObjectMaxSize();
     }
 
     public void setTrackLockedFiles(boolean trackLockedFiles) {
-        // TODO Auto-generated method stub
-        
+        wrapped.setTrackLockedFiles(trackLockedFiles);
     }
 
     public boolean getTrackLockedFiles() {
-        // TODO Auto-generated method stub
-        return false;
+        return wrapped.getTrackLockedFiles();
     }
 
     public void backgroundProcess() {
-        // TODO Auto-generated method stub
-        
+        wrapped.backgroundProcess();
     }
 
     public void registerTrackedResource(TrackedWebResource trackedResource) {
-        // TODO Auto-generated method stub
-        
+        wrapped.registerTrackedResource(trackedResource);
     }
 
     public void deregisterTrackedResource(TrackedWebResource trackedResource) {
-        // TODO Auto-generated method stub
-        
+        wrapped.deregisterTrackedResource(trackedResource);
     }
 
     public List<URL> getBaseUrls() {
-        // TODO Auto-generated method stub
-        return null;
+        return wrapped.getBaseUrls();
     }
-
 }
