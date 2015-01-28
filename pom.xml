@@ -13,6 +13,7 @@
 
   <modules>
     <module>tomcat8</module>
+    <module>tomcat7</module>
     <module>servlicle</module>
   </modules>
 

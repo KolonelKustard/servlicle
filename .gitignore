@@ -6,6 +6,11 @@
 /tomcat8/.classpath
 /tomcat8/.project
 
+/tomcat7/target
+/tomcat7/.settings
+/tomcat7/.classpath
+/tomcat7/.project
+
 /servlicle/target
 /servlicle/.settings
 /servlicle/.classpath
