@@ -75,7 +75,7 @@ public abstract class Servliclet extends HttpServlet {
      * @return the file you want to be returned in the response
      */
     protected abstract File gimmeFile(HttpServletRequest request,
-            HttpServletResponse response);
+            HttpServletResponse response) throws ServletException;
 
     private HttpServlet whereAmI() throws ServletException {
         for (String servliclerClassName : SERVLICLERS) {
